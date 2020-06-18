@@ -1,0 +1,63 @@
+{
+	"touchpanels": [{
+			"id": 3,
+			"type": "Tsw760",
+			"label": "Kitchen"
+		},
+		{
+			"id": 4,
+			"type": "Tsw1060",
+			"label": "Living Room"
+		}
+	],
+	"sources": [{
+		"id": 1,
+		"type": "appletv",
+		"label": "ATV Living Room",
+		"icon": 48
+	},
+	{
+		"id": 2,
+		"type": "bluray",
+		"label": "Bluray Living Room",
+		"icon": 52
+	},
+	{
+		"id": 3,
+		"type": "sky",
+		"label": "Sky Living Room",
+		"icon": 49
+	}],
+	"destinations": [{
+		"id": 1,
+		"type": "tv",
+		"label": "Living Room",
+		"icon": 60
+	},
+	{
+		"id": 2,
+		"type": "tv",
+		"label": "Kitchen",
+		"icon": 61
+	},
+	{
+		"id": 3,
+		"type": "projector",
+		"label": "Cinema",
+		"icon": 62
+	}],
+	"nvx": [{
+			"type": "351",
+			"id": 28,
+			"name": "Living Room",
+			"multicast": "239.0.0.2"
+		},
+		{
+			"type": "350C",
+			"id": 29,
+			"name": "Cinema",
+			"multicast": "239.0.0.4"
+		}
+	],
+	"lastUpdate": ""
+}
