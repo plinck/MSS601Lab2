@@ -157,6 +157,12 @@ namespace Ex_DynamicRegistration.Configuration
             public TouchpanelsItem[] Touchpanels { get; set; }
 
             /// <summary>
+            /// Gets or sets the list of NVX's
+            /// </summary>
+            [JsonProperty("nvx")]
+            public NvxItems[] Nvx { get; set; }
+
+            /// <summary>
             /// Gets or sets the time the config file was last updated
             /// </summary>
             [JsonProperty("lastupdate")]

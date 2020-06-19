@@ -16,7 +16,6 @@ using Crestron.SimplSharpPro.CrestronThread;     // For Threading
 using Crestron.SimplSharpPro.DeviceSupport;      // For Generic Device Support
 using Crestron.SimplSharpPro.Diagnostics;        // For System Monitor Access
 using Crestron.SimplSharpPro.UI;
-using Ex_DynamicRegistration.UI; // For xPanelForSmartGraphics
 
 namespace Ex_DynamicRegistration
 {

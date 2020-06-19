@@ -14,8 +14,8 @@ using Crestron.SimplSharpPro;                    // For Basic SIMPL#Pro classes
 using Crestron.SimplSharpPro.CrestronThread;     // For Threading
 using Crestron.SimplSharpPro.DeviceSupport;      // For Generic Device Support
 using Crestron.SimplSharpPro.Diagnostics;        // For System Monitor Access
+using Crestron.SimplSharpPro.DM.Streaming;       // For DM-NVX
 using Crestron.SimplSharpPro.UI;
-using Ex_DynamicRegistration.UI;
 
 using RabbitMQ.Client;
 
@@ -26,6 +26,9 @@ namespace Ex_DynamicRegistration
     /// </summary>
     public class SystemManager
     {
+        /// <summary>
+        /// Used for logging information to error log
+        /// </summary>
         private const string LogHeader = "[MSS601Room1SM] ";
 
         /// <summary>
@@ -37,7 +40,7 @@ namespace Ex_DynamicRegistration
         /// <summary>
         /// Keeps track of all the touchpanels that are registered
         /// </summary>
-        private Dictionary<string, BasicTriListWithSmartObject> touchpanels;
+        private Dictionary<string, UI.TouchpanelUI> touchpanels = new Dictionary<string, UI.TouchpanelUI>();
         
         /// <summary>
         /// We're not using a Dictionary in this example, but we are syncing data through RabbitMQ
@@ -63,7 +66,8 @@ namespace Ex_DynamicRegistration
         /// <summary>
         /// TouchpanelUI object to use for registration
         /// </summary>
-        private UI.TouchpanelUI tp;
+        // PAUL TODO - Revisit this
+        // private UI.TouchpanelUI tp;
 
         /// <summary>
         /// Initializes a new instance of the SystemManager class
@@ -85,7 +89,7 @@ namespace Ex_DynamicRegistration
             if (config.Touchpanels != null)
             {                
                 // TODO: Level1. Implement touchPanel + sources + destinations
-                foreach (var touchPanel in config.Touchpanels)
+                foreach (var touchpanel in config.Touchpanels)
                 {
                     this.touchpanels[touchpanel.Label] = new UI.TouchpanelUI(touchpanel.Type, touchpanel.Id, touchpanel.Label, cs);
 
